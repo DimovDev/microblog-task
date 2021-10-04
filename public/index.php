@@ -1,1 +1,5 @@
-<?php require __DIR__ . '/../app/bootstrap.php';
+<?php
+
+require_once __DIR__ . '/../bootstrap/app.php';
+$app->run();
+
