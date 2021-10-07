@@ -10,10 +10,13 @@ $app->add(function ($req, $res, $next) {
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
 });
-
+https://book.cakephp.org/phinx/0/en/migrations.html
 migrations
 $ vendor/bin/phinx init .
 $ $EDITOR phinx.yml
 $ mkdir -p db/migrations db/seeds
 $ vendor/bin/phinx create MyFirstMigration
 $ vendor/bin/phinx migrate -e development
+seeders
+php vendor/bin/phinx seed:create UserSeeder
+php vendor/bin/phinx seed:run

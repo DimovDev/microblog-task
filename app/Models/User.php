@@ -9,6 +9,7 @@ class User extends Model
 {
 	use SoftDeletes;
 
+	protected $table="users";
 	/**
 	 * @var array
 	 */

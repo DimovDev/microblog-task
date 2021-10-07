@@ -1,0 +1,29 @@
+import React from 'react';
+import {Container, Nav, Navbar, NavLink} from "react-bootstrap";
+import {BrowserRouter as Router, Link, Route} from "react-router-dom";
+import Posts from "./Posts";
+import Users from "./Users";
+import AddAdmin from "./AddAdmin";
+import EditAdmin from "./EditAdmin";
+function Admin() {
+
+
+	return (
+		<div>
+			<Router>
+				<Container className="mt-3">
+			<Nav fill variant="tabs" sticky="top" defaultActiveKey="/users" >
+				<Link className="ml-5" to="/users">Users</Link>
+				<Link className="ml-5" to="/posts">Post</Link>
+			</Nav >
+					</Container>
+				<Route component={Users} exact path="/users"/>
+				<Route component={Posts} exact path="/posts"/>
+				<Route component={AddAdmin} exact path="/addAdmin"/>
+				<Route component={EditAdmin} exact path="/editAdmin"/>
+			</Router>
+		</div>
+	);
+}
+
+export default Admin;

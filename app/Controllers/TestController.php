@@ -42,8 +42,11 @@ class TestController extends BaseController
 //		$test->email="test3@example.com";
 //		$test->password=hash('sha256','password');
 //		$test->save();
-
-		dump($test);
+		$user = Test::where("email", "test@example.com")->first();
+		$session = new \SlimSession\Helper();
+		$session->set('my_key', "test@example.com");
+		$my_value = $session->my_key;
+		dump($user);
 		die();
 
 	}
