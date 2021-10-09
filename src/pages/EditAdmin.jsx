@@ -13,7 +13,7 @@ const EditAdmin=(props)=> {
     const [message, setMessage] = useState('');
 
     function editAdmin() {
-        API.post('/edit', {id}).then(result => {
+        API.post('users/edit', {id}).then(result => {
                 if (result.status === 200) {
                     if (result.data.error === 0 && result.data) {
 
@@ -34,7 +34,7 @@ const EditAdmin=(props)=> {
             });
     }
     function updateAdmin() {
-        API.post('/update', {id,name,email,password,confirmPassword}).then(result => {
+        API.post('users/update', {id,name,email,password,confirmPassword}).then(result => {
             if (result.status === 200) {
                 if (result.data.error === 0 && result.data) {
                     setMessage(result.data.message)

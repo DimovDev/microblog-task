@@ -10,7 +10,8 @@ import PrivateRoute from './PrivateRoute';
 import RootAuth from './RootAuth';
 import {Container, Nav, Navbar} from "react-bootstrap";
 import NotFoundPage from "./pages/NotFoundPage";
-import AddAdmin from "./pages/AddAdmin";
+import SinglePost from "./pages/SinglePost";
+
 
 function App() {
     const [authData, setAuthData] = useState(true);
@@ -53,9 +54,10 @@ function App() {
                 <Route component={Login} exact path="/login"/>
                 <Route component={Auth} exact path="/auth"/>
                 <Route component={Logout} exact path="/logout"/>
+                <Route component={SinglePost} exact path="/singlePost"/>
 
-                <Route component={NotFoundPage} exact path="/pages/NotFoundPage"/>
                 <PrivateRoute component={Admin} path="/admin"/>
+                <Route component={NotFoundPage}  path="/pages/NotFoundPage"/>
             </Router>
 
         </AuthContext.Provider>

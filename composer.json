@@ -16,7 +16,10 @@
         "awurth/slim-validation": "^3.0",
         "bryanjhv/slim-session": "~3.0",
         "slim/csrf": "^1.2",
-        "ext-json": "*"
+        "ext-json": "*",
+      "ext-curl": "*",
+        "ext-imagick": "*",
+      "ext-fileinfo": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.0",

@@ -41,10 +41,10 @@ $app = new Slim\App([
 	],
 ]);
 
-$app->options('/{routes:.+}', function ($request, $response, $args) {
-	return $response;
-});
-$app->add(new CorsMiddleware());
+//$app->options('/{routes:.+}', function ($request, $response, $args) {
+//	return $response;
+//});
+//$app->add(new CorsMiddleware());
 //$app->add(new AuthMiddleware());
 
 $app->add(

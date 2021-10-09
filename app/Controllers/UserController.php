@@ -2,15 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Controllers\Controller;
-use App\Models\Test;
-
 use App\Models\User;
-
-use Cake\Utility\Hash;
-use Illuminate\Database\Query\Builder;
-
-
 use Psr\Http\Message\{
 	ServerRequestInterface as Request,
 	ResponseInterface as Response

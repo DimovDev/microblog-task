@@ -13,7 +13,7 @@ const AddAdmin=()=> {
 
     function CreateAdmin() {
 
-        API.post('/create', {
+        API.post('users/create', {
            name,email,password,confirmPassword
         }).then(result => {
                 if (result.status === 200) {

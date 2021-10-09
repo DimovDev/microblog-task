@@ -4,21 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Query\Builder;
 
-class Test extends Model
+class Post extends Model
 {
 	use SoftDeletes;
 
-	protected $table="users_test";
-
-
-
+	protected $table="posts";
 	/**
 	 * @var array
 	 */
 	protected $fillable = [
-		'name', 'email','password','role'
+		'title', 'content','image'
 	];
 
 }

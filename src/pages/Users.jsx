@@ -12,7 +12,7 @@ function Users({props}) {
     const [message, setMessage] = useState(false)
     const [id, setId] = useState(false)
     useEffect(() => {
-        API.post('users')
+        API.post('users/users')
             .then(result => {
                 if (result.status === 200) {
                     users = (result.data.users)
@@ -34,7 +34,7 @@ function Users({props}) {
     function handleDelete(id) {
         console.log(id)
         setId(id)
-        API.post('delete', {id})
+        API.post('users/delete', {id})
             .then(result => {
                 if (result.status === 200) {
 
@@ -58,8 +58,6 @@ function Users({props}) {
         setMessage(false)
     }, 5000)
 
-
-
     return (
         <>
 
@@ -82,8 +80,9 @@ function Users({props}) {
                             <td>{user.name}</td>
                             <td>{user.email}</td>
                             <td><Link to={{pathname: '/editAdmin/', state: {id: user.id}}}><Button
-                                variant="outline-success" size="sm">Edit</Button></Link><Button variant="outline-danger"
+                                variant="outline-success" size="sm" className="ml-1">Edit</Button></Link><Button variant="outline-danger"
                                                                                                 size="sm"
+                                                                                                                 className="ml-2"
                                                                                                 onClick={() => {
                                                                                                     handleDelete(user.id)
                                                                                                 }}>Delete</Button>{}

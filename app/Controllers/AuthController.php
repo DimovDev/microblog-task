@@ -75,22 +75,22 @@ class AuthController extends BaseController
 		$username = $request->getParam('email');
 		$password = $request->getParam('password');
 
-		$user = User::where("email", $username)->withTrashed()->first();
+		$user = User::where("email", $username)->first();
 
-		if (!$user) {
+		if (!$user || $user->password != password_verify($password, $user->password)) {
 			return $response->withJson([
 				"error" => 1,
-				"message" => "ERROR USER",
+				"message" => "Email or password are incorrect",
 
 			]);
 		}
-		$hash=$user->password;
-		if ($user->password != password_verify($password, $hash)) {
-			return $response->withJson([
-				"error" => 2,
-				"message" => "ERROR PASSWORD",
-			]);
-		}
+//		$hash=$user->password;
+//		if ($user->password != password_verify($password, $hash)) {
+//			return $response->withJson([
+//				"error" => 2,
+//				"message" => "ERROR PASSWORD",
+//			]);
+//		}
 
 		$responseData = [
 			"error" => 0,
