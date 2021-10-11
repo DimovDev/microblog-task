@@ -13,7 +13,7 @@ This project was created with Slim 3, Bootstrap 4, and React.
 
 4.Install all dependencies: npm run init
 
-This will starting: npm install  && composer install && composer && vendor/bin/phpunit tests && php vendor/bin/phinx migrate
+This will starting: npm install  && composer install && composer vendor/bin/phpunit tests && php vendor/bin/phinx migrate
 
 vendor/bin/phpunit -starts all unit tests
 
