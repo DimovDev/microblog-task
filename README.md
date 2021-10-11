@@ -24,7 +24,7 @@ This will be starting run php -S localhost:8080 -t public  public/index.php & re
 
 4. Open in your browser http://localhost:3000/
 
-5. Enjoy the blog.To see admin panel you login first with user:admin@example.com pass:password
+5. Enjoy the blog.To see admin panel you must login first with user:admin@example.com pass:password
 
 
 ## License
