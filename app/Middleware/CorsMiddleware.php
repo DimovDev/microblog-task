@@ -17,9 +17,9 @@ class CorsMiddleware{
 	{
 		$response = $next($request, $response);
 		return $response
-			->withHeader('Access-Control-Allow-Origin', 'http://localhost:3000' )
+			->withHeader('Access-Control-Allow-Origin', 'http://localhost:3000'  )
 			->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization,Set-Cookie,withCredentials')
-//			->withHeader("Content-Type", "application/json",'image/*')
+			->withHeader("Content-Type", "application/json",'image/*')
 			->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS,HEAD');
 	}
 }

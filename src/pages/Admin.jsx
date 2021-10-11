@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Nav, Navbar, NavLink} from "react-bootstrap";
+import {Container, Nav} from "react-bootstrap";
 import {BrowserRouter as Router, Link, Route} from "react-router-dom";
 import Posts from "./Posts";
 import Users from "./Users";
@@ -18,7 +18,7 @@ function Admin() {
                     <Container className="mt-3">
                         <Nav fill variant="tabs" sticky="top" defaultActiveKey="/users">
                             <Link className="ml-5" to="/users">Users</Link>
-                            <Link className="ml-5" to="/posts">Post</Link>
+                            <Link className="ml-5" to="/posts">Posts</Link>
                         </Nav>
                     </Container>
                     <Route component={Users} exact path="/users"/>

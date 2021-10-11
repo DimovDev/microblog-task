@@ -23,7 +23,7 @@
     "start": " react-scripts start ",
     "watch": "node scripts/watch.js",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts tests",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

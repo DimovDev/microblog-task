@@ -27,22 +27,21 @@ class PostController extends BaseController
 
 		$posts = Post::all();
 
-		if (!$posts) {
+		if (count($posts)==0) {
 			return $response->withJson([
 				"error" => 1,
 				"message" => "No posts",
 
-			]);
+			], 404);
 		}
 		$responseData = [
 			"error" => 0,
 			"message" => "SUCCESS",
 			'posts' => $posts,
 		];
-		return $response->withJson($responseData);
+		return $response->withJson($responseData, 200);
 
 	}
-
 
 
 	public function create(Request $request, Response $response, $args)
@@ -52,12 +51,12 @@ class PostController extends BaseController
 		$uploadedFiles = $request->getUploadedFiles();;
 		$uploadedFile = $uploadedFiles['file'];
 
-		if (!$title || !$content) {
+		if (!$title || !$content || !$uploadedFiles) {
 			return $response->withJson([
 				"error" => 1,
 				"message" => "Please fill all fields!",
 
-			]);
+			], 411);
 		}
 
 		$post = new Post();
@@ -65,11 +64,6 @@ class PostController extends BaseController
 		$post->content = "$content";
 		$post->save();
 		if ($post->save()) {
-			$responseData = [
-				"error" => 0,
-				"message" => "Post created successfully.",
-				"uploadedFile" => $uploadedFile
-			];
 
 
 			$images_path = __DIR__ . "/../../public/postImages/" . $post->id . '/';
@@ -87,16 +81,17 @@ class PostController extends BaseController
 					"message" => "Post created successfully.",
 					"post" => $post,
 				];
+				return $response->withJson($responseData, 201);
+
 			} catch (Exception $e) {
 				$responseData = [
 					"error" => 1,
 					"message" => "Encountered an error: while uploading. NO FILE UPLOADED",
 				];
+				return $response->withJson($responseData, 500);
 			}
 		}
-		return $response->withJson($responseData);
 	}
-
 
 
 	public function edit(Request $request, Response $response, $args)
@@ -104,14 +99,20 @@ class PostController extends BaseController
 		$id = $request->getParam('id');
 
 		$post = Post::where('id', $id)->first();
-		if ($post) {
+		if (!$post) {
 			$responseData = [
-				"error" => 0,
+				"error" => 1,
 				"message" => "No such post.",
-				"post" => $post,
+
 			];
+			return $response->withJson($responseData, 404);
 		}
-		return $response->withJson($responseData);
+		$responseData = [
+			"error" => 0,
+			"message" => "SUCCESS.",
+			"post" => $post,
+		];
+		return $response->withJson($responseData, 200);
 	}
 
 	public function update(Request $request, Response $response, $args)
@@ -122,7 +123,7 @@ class PostController extends BaseController
 		$uploadedFiles = $request->getUploadedFiles();;
 		$uploadedFile = @$uploadedFiles['file'];
 
-		if (!$title || !$content ) {
+		if (!$title || !$content) {
 			return $response->withJson([
 				"error" => 1,
 				"message" => "Please fill all fields!",
@@ -130,8 +131,8 @@ class PostController extends BaseController
 			]);
 		}
 		$post = Post::where('id', $id)->first();
-		$post->title=$title;
-		$post->content=$content;
+		$post->title = $title;
+		$post->content = $content;
 		$post->update();
 		if ($post->save()) {
 			$responseData = [
@@ -174,18 +175,19 @@ class PostController extends BaseController
 		$post = Post::where('id', $id)->first();
 
 		if (!$post) {
-			return $response->withJson([
+			$responseData = [
 				"error" => 1,
 				"message" => "No posts",
 
-			]);
+			];
+			return $response->withJson($responseData, 404);
 		}
 		$responseData = [
 			"error" => 0,
 			"message" => "SUCCESS",
 			'post' => $post,
 		];
-		return $response->withJson($responseData);
+		return $response->withJson($responseData, 200);
 
 	}
 
@@ -193,15 +195,21 @@ class PostController extends BaseController
 	{
 		$id = $request->getParam('id');
 		$post = Post::where('id', $id)->first();
-		$post->delete();
-		if ($post->delete()) {
+		if (!$post) {
 			$responseData = [
-				"error" => 0,
-				"message" => "Post has been deleted successfully.",
+				"error" => 1,
+				"message" => "Post haven't been deleted.",
 			];
+			return $response->withJson($responseData, 404);
 		}
-		return $response->withJson($responseData);
+		$post->delete();
+		$responseData = [
+			"error" => 0,
+			"message" => "Post has been deleted successfully.",
+		];
+		return $response->withJson($responseData, 200);
 	}
+
 	function moveUploadedFile($images_path, UploadedFile $uploadedFile): string
 	{
 		$extension = pathinfo($uploadedFile->getClientFilename(), PATHINFO_EXTENSION);

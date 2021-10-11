@@ -7,8 +7,7 @@ const EditAdmin=(props)=> {
 
     const [title, setTitle] = useState('');
     const [content, setContent] =  useState('');
-    const [image, setImage] = useState('');
-    const [error, setIsError] = useState('');
+        const [error, setIsError] = useState('');
     const [message, setMessage] = useState('');
     const [file, setFile] = useState('');
     const [filename, setFilename] = useState('Choose File');

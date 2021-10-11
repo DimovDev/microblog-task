@@ -1,16 +1,15 @@
 import React, { useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
-import axios from 'axios';
 import { useAuth } from '../context/Auth';
+import API from "../API";
 
 function Logout() {
 	const { authed, setAuth } = useAuth();
 
 	useEffect(() => {
-		// axios
-		// 	.post('/logout')
-		// 	.then(() => setAuth())
-		// 	.catch(e => setAuth());
+		API.post('/logout')
+			.then(() => setAuth())
+			.catch(e => setAuth());
 		setAuth()
 		localStorage.clear();
 	}, [setAuth]);

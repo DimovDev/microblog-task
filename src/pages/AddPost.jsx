@@ -6,8 +6,7 @@ import API from "../API";
 const AddPost = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
-    const [image, setImage] = useState('');
-    const [error, setIsError] = useState('');
+       const [error, setIsError] = useState('');
     const [message, setMessage] = useState('');
     const [file, setFile] = useState('');
     const [filename, setFilename] = useState('Choose File');
@@ -50,10 +49,6 @@ const AddPost = () => {
         setFilename(e.target.files[0].name);
     };
 
-    // let imgPreview;
-    // if (file) {
-    //     imgPreview = <img src={file} alt='' width={100} height={100}/> ;
-    // }
 
     return (
         <>
@@ -73,7 +68,7 @@ const AddPost = () => {
                     <Form.Group controlId="formFile" className="mb-3">
                         <Form.Label>Please select image</Form.Label>
                         <Form.Control type="file" accept="image/*" onChange={onChange}
-                            // onChange={(event) => setImage(URL.createObjectURL(event.target.files[0]))}
+
                         />
                     </Form.Group>
                     {file&&

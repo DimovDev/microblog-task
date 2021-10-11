@@ -4,8 +4,6 @@ import API from "../API"
 
 
 import {withRouter, Link, Redirect,} from "react-router-dom";
-import axios from "axios";
-import e from "cors";
 
 
 function Posts({props}) {
@@ -51,7 +49,7 @@ function Posts({props}) {
 
                     if (result.data.error === 0) {
                         setMessage(result.data.message);
-                        console.log(result.data.message)
+
 
                     } else {
                         setIsError(true);

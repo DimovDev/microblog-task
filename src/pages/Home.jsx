@@ -32,7 +32,7 @@ function Home() {
 		<Container className="pt-5">
 			<h1 className="text-center">Articles</h1>
 					{posts && !!posts.length && posts.map((post, key) =>
-				<Media className="pt-2">
+				<Media className="pt-2" key={post.id}>
 					<img src={`/postImages/${post.id}/${post.image}`}
 						 alt={post.title}
 						 className="align-self-center mr-4"

@@ -56,8 +56,8 @@ function App() {
                 <Route component={Logout} exact path="/logout"/>
                 <Route component={SinglePost} exact path="/singlePost"/>
 
-                <PrivateRoute component={Admin} path="/admin"/>
                 <Route component={NotFoundPage}  path="/pages/NotFoundPage"/>
+                <PrivateRoute component={Admin} path="/admin"/>
             </Router>
 
         </AuthContext.Provider>

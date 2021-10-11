@@ -36,11 +36,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
 __webpack_require__.$Refresh$.setup(module.i);
 
- // axios.defaults.withCredentials=true;
 
 /* harmony default export */ __webpack_exports__["default"] = (axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
-  baseURL: 'http://localhost:8080' // withCredentials:true,
-
+  baseURL: 'http://localhost:8080'
 }));
 
 const currentExports = __react_refresh_utils__.getModuleExports(module.i);
@@ -334,16 +332,16 @@ function App() {
         fileName: _jsxFileName,
         lineNumber: 57,
         columnNumber: 17
-      }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_13__["jsxDEV"])(_PrivateRoute__WEBPACK_IMPORTED_MODULE_8__["default"], {
-        component: _pages_Admin__WEBPACK_IMPORTED_MODULE_3__["default"],
-        path: "/admin"
+      }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_13__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        component: _pages_NotFoundPage__WEBPACK_IMPORTED_MODULE_11__["default"],
+        path: "/pages/NotFoundPage"
       }, void 0, false, {
         fileName: _jsxFileName,
         lineNumber: 59,
         columnNumber: 17
-      }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_13__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-        component: _pages_NotFoundPage__WEBPACK_IMPORTED_MODULE_11__["default"],
-        path: "/pages/NotFoundPage"
+      }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_13__["jsxDEV"])(_PrivateRoute__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        component: _pages_Admin__WEBPACK_IMPORTED_MODULE_3__["default"],
+        path: "/admin"
       }, void 0, false, {
         fileName: _jsxFileName,
         lineNumber: 60,
@@ -618,16 +616,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _context_Auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./context/Auth */ "./src/context/Auth.jsx");
-/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
-/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _context_Auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./context/Auth */ "./src/context/Auth.jsx");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__);
 __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
 __webpack_require__.$Refresh$.setup(module.i);
 
 var _s = __webpack_require__.$Refresh$.signature();
-
 
 
 
@@ -643,49 +638,22 @@ function RootAuth({
   const [initAuthTest, setAuthTest] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
   const {
     setAuth
-  } = Object(_context_Auth__WEBPACK_IMPORTED_MODULE_3__["useAuth"])();
+  } = Object(_context_Auth__WEBPACK_IMPORTED_MODULE_2__["useAuth"])();
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     let authUser = localStorage.getItem('user');
 
     if (!initAuthTest) {
-      // 	axios
-      // 		.post('http://localhost:8080/ping')
-      // 		.then(result => {
-      // 			console.log(result.data)
-      // 			if (result.status === 200) {
-      // 				// setAuth(result.data.authData);
-      // 				setAuth(localStorage.getItem('user'));
-      // 			} else {
-      // 				setAuth(null);
-      // 			}
-      // 		})
-      // 		.catch(e => {
-      // 			if (!axios.isCancel(e)) {
-      // 				setAuth(null);
-      // 			}
-      // 		})
-      // 		.finally(() => {
-      // 			setAuthTest(true);
-      // 		});
       setAuth(localStorage.getItem('user'));
       setAuthTest(true);
     }
-  }, [initAuthTest, setAuth]); // useEffect(() => {
-  // 	const loggedInUser = localStorage.getItem("user");
-  // 	if (loggedInUser) {
-  // 		const foundUser = JSON.parse(loggedInUser);
-  // 		setAuth(loggedInUser);
-  // 	}
-  // 	// setAuthTest(true);
-  // }, []);
-
-  return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["Fragment"], {
+  }, [initAuthTest, setAuth]);
+  return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["Fragment"], {
     children: initAuthTest ? children : null
   }, void 0, false);
 }
 
 _s(RootAuth, "d88B9vUtbokYMFvYh5b8okxjSdc=", false, function () {
-  return [_context_Auth__WEBPACK_IMPORTED_MODULE_3__["useAuth"]];
+  return [_context_Auth__WEBPACK_IMPORTED_MODULE_2__["useAuth"]];
 });
 
 _c = RootAuth;
@@ -1396,7 +1364,6 @@ const AddPost = () => {
 
   const [title, setTitle] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
   const [content, setContent] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
-  const [image, setImage] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
   const [error, setIsError] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
   const [message, setMessage] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
   const [file, setFile] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
@@ -1433,11 +1400,7 @@ const AddPost = () => {
   const onChange = e => {
     setFile(e.target.files[0]);
     setFilename(e.target.files[0].name);
-  }; // let imgPreview;
-  // if (file) {
-  //     imgPreview = <img src={file} alt='' width={100} height={100}/> ;
-  // }
-
+  };
 
   return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["Fragment"], {
     children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], {
@@ -1446,7 +1409,7 @@ const AddPost = () => {
         children: "Add New Post"
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 61,
+        lineNumber: 56,
         columnNumber: 17
       }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"], {
         className: "pt-3",
@@ -1456,13 +1419,35 @@ const AddPost = () => {
             children: "Title"
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 64,
+            lineNumber: 59,
             columnNumber: 25
           }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
             type: "text",
             placeholder: "Enter title",
             value: title,
             onChange: event => setTitle(event.target.value)
+          }, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 60,
+            columnNumber: 25
+          }, undefined)]
+        }, void 0, true, {
+          fileName: _jsxFileName,
+          lineNumber: 58,
+          columnNumber: 21
+        }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
+          controlId: "",
+          children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, {
+            children: "Content"
+          }, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 64,
+            columnNumber: 25
+          }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
+            as: "textarea",
+            placeholder: "Enter content",
+            value: content,
+            onChange: event => setContent(event.target.value)
           }, void 0, false, {
             fileName: _jsxFileName,
             lineNumber: 65,
@@ -1473,18 +1458,18 @@ const AddPost = () => {
           lineNumber: 63,
           columnNumber: 21
         }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
-          controlId: "",
+          controlId: "formFile",
+          className: "mb-3",
           children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, {
-            children: "Content"
+            children: "Please select image"
           }, void 0, false, {
             fileName: _jsxFileName,
             lineNumber: 69,
             columnNumber: 25
           }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
-            as: "textarea",
-            placeholder: "Enter content",
-            value: content,
-            onChange: event => setContent(event.target.value)
+            type: "file",
+            accept: "image/*",
+            onChange: onChange
           }, void 0, false, {
             fileName: _jsxFileName,
             lineNumber: 70,
@@ -1493,29 +1478,6 @@ const AddPost = () => {
         }, void 0, true, {
           fileName: _jsxFileName,
           lineNumber: 68,
-          columnNumber: 21
-        }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
-          controlId: "formFile",
-          className: "mb-3",
-          children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, {
-            children: "Please select image"
-          }, void 0, false, {
-            fileName: _jsxFileName,
-            lineNumber: 74,
-            columnNumber: 25
-          }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
-            type: "file",
-            accept: "image/*",
-            onChange: onChange // onChange={(event) => setImage(URL.createObjectURL(event.target.files[0]))}
-
-          }, void 0, false, {
-            fileName: _jsxFileName,
-            lineNumber: 75,
-            columnNumber: 25
-          }, undefined)]
-        }, void 0, true, {
-          fileName: _jsxFileName,
-          lineNumber: 73,
           columnNumber: 21
         }, undefined), file && /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])("div", {
           className: "form-group preview",
@@ -1526,12 +1488,12 @@ const AddPost = () => {
             height: 200
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 81,
+            lineNumber: 76,
             columnNumber: 25
           }, undefined)
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 80,
+          lineNumber: 75,
           columnNumber: 21
         }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
           variant: "primary",
@@ -1539,30 +1501,30 @@ const AddPost = () => {
           children: "Submit"
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 83,
+          lineNumber: 78,
           columnNumber: 21
         }, undefined)]
       }, void 0, true, {
         fileName: _jsxFileName,
-        lineNumber: 62,
+        lineNumber: 57,
         columnNumber: 17
       }, undefined)]
     }, void 0, true, {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 55,
       columnNumber: 13
     }, undefined), message && /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])("p", {
       className: "text-danger text-center text-capitalize",
       children: message
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 88,
+      lineNumber: 83,
       columnNumber: 25
     }, undefined)]
   }, void 0, true);
 };
 
-_s(AddPost, "eIsIetptIED+HlLeZpwRBxEJ8WA=");
+_s(AddPost, "jP1CLWTjVZAhyUaT7ZUIkOFBDLg=");
 
 _c = AddPost;
 /* harmony default export */ __webpack_exports__["default"] = (AddPost);
@@ -1707,7 +1669,7 @@ function Admin() {
             }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
               className: "ml-5",
               to: "/posts",
-              children: "Post"
+              children: "Posts"
             }, void 0, false, {
               fileName: _jsxFileName,
               lineNumber: 21,
@@ -1910,29 +1872,6 @@ function Auth(props) {
     setAuth
   } = Object(_context_Auth__WEBPACK_IMPORTED_MODULE_4__["useAuth"])();
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    const cancelToken = axios__WEBPACK_IMPORTED_MODULE_2___default.a.CancelToken.source(); // axios
-    // 	.post('http://localhost:8080/ping',  { cancelToken: cancelToken.token })
-    // 	.then(result => {
-    // 		console.log(result)
-    // 		if (result.status === 200) {
-    // 			if (result.data.error === 0) {
-    // 				setAuth(result.data.authData);
-    // 			} else {
-    // 				setAuth(null);
-    // 			}
-    // 		} else {
-    // 			setAuth(null);
-    // 		}
-    // 	})
-    // 	.catch(e => {
-    // 		if (!axios.isCancel(e)) {
-    // 			setAuth(null);
-    // 		}
-    // 	});
-    // return () => {
-    // 	cancelToken.cancel();
-    // };
-
     try {
       setAuth(localStorage.getItem('user'));
     } catch (e) {
@@ -1946,7 +1885,7 @@ function Auth(props) {
       to: referer.pathname
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 21,
       columnNumber: 10
     }, this);
   }
@@ -1961,7 +1900,7 @@ function Auth(props) {
       }
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 25,
       columnNumber: 10
     }, this);
   }
@@ -1972,12 +1911,12 @@ function Auth(props) {
       children: "Logging in..."
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 30,
       columnNumber: 4
     }, this)
   }, void 0, false, {
     fileName: _jsxFileName,
-    lineNumber: 54,
+    lineNumber: 29,
     columnNumber: 3
   }, this);
 }
@@ -2401,7 +2340,6 @@ const EditAdmin = props => {
   } = props.location.state;
   const [title, setTitle] = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])('');
   const [content, setContent] = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])('');
-  const [image, setImage] = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])('');
   const [error, setIsError] = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])('');
   const [message, setMessage] = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])('');
   const [file, setFile] = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])('');
@@ -2471,7 +2409,7 @@ const EditAdmin = props => {
         children: "Edit Post"
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 78,
+        lineNumber: 77,
         columnNumber: 17
       }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_0__["Form"], {
         className: "pt-3",
@@ -2481,7 +2419,7 @@ const EditAdmin = props => {
             children: "Title"
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 81,
+            lineNumber: 80,
             columnNumber: 25
           }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_0__["Form"].Control, {
             type: "text",
@@ -2490,12 +2428,12 @@ const EditAdmin = props => {
             onChange: event => setTitle(event.target.value)
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 82,
+            lineNumber: 81,
             columnNumber: 25
           }, undefined)]
         }, void 0, true, {
           fileName: _jsxFileName,
-          lineNumber: 80,
+          lineNumber: 79,
           columnNumber: 21
         }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_0__["Form"].Group, {
           controlId: "",
@@ -2503,7 +2441,7 @@ const EditAdmin = props => {
             children: "Content"
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 85,
+            lineNumber: 84,
             columnNumber: 25
           }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_0__["Form"].Control, {
             as: "textarea",
@@ -2512,12 +2450,12 @@ const EditAdmin = props => {
             onChange: event => setContent(event.target.value)
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 86,
+            lineNumber: 85,
             columnNumber: 25
           }, undefined)]
         }, void 0, true, {
           fileName: _jsxFileName,
-          lineNumber: 84,
+          lineNumber: 83,
           columnNumber: 21
         }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])("div", {
           className: "form-group preview",
@@ -2528,12 +2466,12 @@ const EditAdmin = props => {
             height: 200
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 89,
+            lineNumber: 88,
             columnNumber: 25
           }, undefined)
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 88,
+          lineNumber: 87,
           columnNumber: 21
         }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_0__["Form"].Group, {
           controlId: "formFile",
@@ -2542,7 +2480,7 @@ const EditAdmin = props => {
             children: "Please select new image "
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 92,
+            lineNumber: 91,
             columnNumber: 25
           }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_0__["Form"].Control, {
             type: "file",
@@ -2551,12 +2489,12 @@ const EditAdmin = props => {
 
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 93,
+            lineNumber: 92,
             columnNumber: 25
           }, undefined)]
         }, void 0, true, {
           fileName: _jsxFileName,
-          lineNumber: 91,
+          lineNumber: 90,
           columnNumber: 21
         }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_0__["Button"], {
           variant: "primary",
@@ -2564,30 +2502,30 @@ const EditAdmin = props => {
           children: "Submit"
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 98,
+          lineNumber: 97,
           columnNumber: 21
         }, undefined)]
       }, void 0, true, {
         fileName: _jsxFileName,
-        lineNumber: 79,
+        lineNumber: 78,
         columnNumber: 17
       }, undefined)]
     }, void 0, true, {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 76,
       columnNumber: 13
     }, undefined), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxDEV"])("p", {
       className: "text-danger text-center text-capitalize",
       children: message
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 103,
+      lineNumber: 102,
       columnNumber: 13
     }, undefined)]
   }, void 0, true);
 };
 
-_s(EditAdmin, "qj8TBG0wy4Ot7+6nUei2/1oBKSI=");
+_s(EditAdmin, "vLSuo0aFranPlpL+iTzAySgpNpM=");
 
 _c = EditAdmin;
 /* harmony default export */ __webpack_exports__["default"] = (EditAdmin);
@@ -2779,7 +2717,7 @@ function Home() {
           lineNumber: 40,
           columnNumber: 6
         }, this)]
-      }, void 0, true, {
+      }, post.id, true, {
         fileName: _jsxFileName,
         lineNumber: 35,
         columnNumber: 5
@@ -3135,9 +3073,8 @@ __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(__react_refresh_utils__, __react_refresh_error_overlay__) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _context_Auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../context/Auth */ "./src/context/Auth.jsx");
+/* harmony import */ var _context_Auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../context/Auth */ "./src/context/Auth.jsx");
+/* harmony import */ var _API__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../API */ "./src/API.jsx");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__);
 __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
@@ -3158,12 +3095,9 @@ function Logout() {
   const {
     authed,
     setAuth
-  } = Object(_context_Auth__WEBPACK_IMPORTED_MODULE_3__["useAuth"])();
+  } = Object(_context_Auth__WEBPACK_IMPORTED_MODULE_2__["useAuth"])();
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    // axios
-    // 	.post('/logout')
-    // 	.then(() => setAuth())
-    // 	.catch(e => setAuth());
+    _API__WEBPACK_IMPORTED_MODULE_3__["default"].post('/logout').then(() => setAuth()).catch(e => setAuth());
     setAuth();
     localStorage.clear();
   }, [setAuth]);
@@ -3173,7 +3107,7 @@ function Logout() {
       to: "/"
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 18,
       columnNumber: 10
     }, this);
   }
@@ -3182,7 +3116,7 @@ function Logout() {
 }
 
 _s(Logout, "ZOGQ/zjC7L8bvZfAsHRWQKdCLow=", false, function () {
-  return [_context_Auth__WEBPACK_IMPORTED_MODULE_3__["useAuth"]];
+  return [_context_Auth__WEBPACK_IMPORTED_MODULE_2__["useAuth"]];
 });
 
 _c = Logout;
@@ -3395,19 +3329,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
 /* harmony import */ var _API__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../API */ "./src/API.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var cors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! cors */ "./node_modules/cors/lib/index.js");
-/* harmony import */ var cors__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(cors__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
-/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__);
 __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
 __webpack_require__.$Refresh$.setup(module.i);
 
 var _jsxFileName = "/home/dimovdev/My Project/microblog-task/src/pages/Posts.jsx",
     _s = __webpack_require__.$Refresh$.signature();
-
-
 
 
 
@@ -3457,7 +3385,6 @@ function Posts({
       if (result.status === 200) {
         if (result.data.error === 0) {
           setMessage(result.data.message);
-          console.log(result.data.message);
         } else {
           setIsError(true);
         }
@@ -3467,142 +3394,142 @@ function Posts({
     }).catch(e => {
       setIsError(true);
     });
-    return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Redirect"], {
+    return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Redirect"], {
       to: "/posts"
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 64,
       columnNumber: 16
     }, this);
   }
 
-  return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["Fragment"], {
-    children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], {
+  return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["Fragment"], {
+    children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], {
       className: "mt-5",
-      children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+      children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
         to: {
           pathname: '/addPost/'
         },
-        children: [" ", /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        children: [" ", /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
           variant: "outline-primary",
           size: "sm",
           className: "float-right mb-2",
           children: "Add New Post"
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 73,
+          lineNumber: 71,
           columnNumber: 53
         }, this)]
       }, void 0, true, {
         fileName: _jsxFileName,
-        lineNumber: 73,
+        lineNumber: 71,
         columnNumber: 17
-      }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Table"], {
+      }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Table"], {
         striped: true,
         bordered: true,
         hover: true,
         size: "sm",
         className: "pb-2",
-        children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("thead", {
-          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("tr", {
-            children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("th", {
+        children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("thead", {
+          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("tr", {
+            children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("th", {
               children: "#"
+            }, void 0, false, {
+              fileName: _jsxFileName,
+              lineNumber: 76,
+              columnNumber: 25
+            }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("th", {
+              children: "Title"
+            }, void 0, false, {
+              fileName: _jsxFileName,
+              lineNumber: 77,
+              columnNumber: 25
+            }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("th", {
+              children: "Content"
             }, void 0, false, {
               fileName: _jsxFileName,
               lineNumber: 78,
               columnNumber: 25
-            }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("th", {
-              children: "Title"
+            }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("th", {
+              children: "Image"
             }, void 0, false, {
               fileName: _jsxFileName,
               lineNumber: 79,
               columnNumber: 25
-            }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("th", {
-              children: "Content"
+            }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("th", {
+              children: "Action"
             }, void 0, false, {
               fileName: _jsxFileName,
               lineNumber: 80,
               columnNumber: 25
-            }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("th", {
-              children: "Image"
-            }, void 0, false, {
-              fileName: _jsxFileName,
-              lineNumber: 81,
-              columnNumber: 25
-            }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("th", {
-              children: "Action"
-            }, void 0, false, {
-              fileName: _jsxFileName,
-              lineNumber: 82,
-              columnNumber: 25
             }, this)]
           }, void 0, true, {
             fileName: _jsxFileName,
-            lineNumber: 77,
+            lineNumber: 75,
             columnNumber: 21
           }, this)
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 76,
+          lineNumber: 74,
           columnNumber: 21
-        }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("tbody", {
-          children: posts && !!posts.length && posts.map((post, key) => /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("tr", {
-            children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("td", {
+        }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("tbody", {
+          children: posts && !!posts.length && posts.map((post, key) => /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("tr", {
+            children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("td", {
               children: key + 1
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 88,
+              lineNumber: 86,
               columnNumber: 29
-            }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("td", {
+            }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("td", {
               children: post.title
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 89,
+              lineNumber: 87,
               columnNumber: 29
-            }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("td", {
+            }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("td", {
               children: [post.content.substring(0, 50), "...."]
             }, void 0, true, {
               fileName: _jsxFileName,
-              lineNumber: 90,
+              lineNumber: 88,
               columnNumber: 29
-            }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("td", {
-              children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("img", {
+            }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("td", {
+              children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("img", {
                 src: `/postImages/${post.id}/${post.image}`,
                 alt: post.title,
                 width: 50,
                 height: 50
               }, void 0, false, {
                 fileName: _jsxFileName,
-                lineNumber: 91,
+                lineNumber: 89,
                 columnNumber: 33
               }, this)
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 91,
+              lineNumber: 89,
               columnNumber: 29
-            }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("td", {
-              children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+            }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("td", {
+              children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
                 to: {
                   pathname: '/editPost/',
                   state: {
                     id: post.id
                   }
                 },
-                children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+                children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
                   variant: "outline-success",
                   size: "sm",
                   className: "ml-1",
                   children: "Edit"
                 }, void 0, false, {
                   fileName: _jsxFileName,
-                  lineNumber: 93,
+                  lineNumber: 91,
                   columnNumber: 91
                 }, this)
               }, void 0, false, {
                 fileName: _jsxFileName,
-                lineNumber: 93,
+                lineNumber: 91,
                 columnNumber: 33
-              }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+              }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
                 variant: "outline-danger",
                 size: "sm",
                 className: "ml-2",
@@ -3612,39 +3539,39 @@ function Posts({
                 children: "Delete"
               }, void 0, false, {
                 fileName: _jsxFileName,
-                lineNumber: 95,
+                lineNumber: 93,
                 columnNumber: 33
               }, this)]
             }, void 0, true, {
               fileName: _jsxFileName,
-              lineNumber: 93,
+              lineNumber: 91,
               columnNumber: 29
             }, this)]
           }, post.id, true, {
             fileName: _jsxFileName,
-            lineNumber: 87,
+            lineNumber: 85,
             columnNumber: 25
           }, this))
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 85,
+          lineNumber: 83,
           columnNumber: 21
         }, this)]
       }, void 0, true, {
         fileName: _jsxFileName,
-        lineNumber: 75,
+        lineNumber: 73,
         columnNumber: 17
       }, this)]
     }, void 0, true, {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 70,
       columnNumber: 13
-    }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("p", {
+    }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("p", {
       className: "text-danger text-center text-capitalize",
       children: message
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 107,
+      lineNumber: 105,
       columnNumber: 13
     }, this)]
   }, void 0, true);
@@ -3751,15 +3678,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap_Media__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap/Media */ "./node_modules/react-bootstrap/esm/Media.js");
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
 /* harmony import */ var _API__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../API */ "./src/API.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
-/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__);
 __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
 __webpack_require__.$Refresh$.setup(module.i);
 
 var _jsxFileName = "/home/dimovdev/My Project/microblog-task/src/pages/SinglePost.jsx",
     _s = __webpack_require__.$Refresh$.signature();
-
 
 
 
@@ -3796,19 +3721,19 @@ function SinglePost(props) {
       setIsError(true);
     });
   }, []);
-  return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["jsxDEV"])(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["Fragment"], {
-    children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], {
+  return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["Fragment"], {
+    children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], {
       className: "pt-5",
-      children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["jsxDEV"])("h1", {
+      children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("h1", {
         className: "text-center",
         children: post.title
       }, void 0, false, {
         fileName: _jsxFileName,
         lineNumber: 35,
         columnNumber: 4
-      }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["jsxDEV"])(react_bootstrap_Media__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(react_bootstrap_Media__WEBPACK_IMPORTED_MODULE_1__["default"], {
         className: "pt-2",
-        children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["jsxDEV"])("img", {
+        children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("img", {
           src: `/postImages/${post.id}/${post.image}`,
           alt: post.title,
           className: "align-self-center mr-4",
@@ -3818,8 +3743,8 @@ function SinglePost(props) {
           fileName: _jsxFileName,
           lineNumber: 38,
           columnNumber: 6
-        }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["jsxDEV"])(react_bootstrap_Media__WEBPACK_IMPORTED_MODULE_1__["default"].Body, {
-          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["jsxDEV"])("p", {
+        }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(react_bootstrap_Media__WEBPACK_IMPORTED_MODULE_1__["default"].Body, {
+          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("p", {
             children: post.content
           }, void 0, false, {
             fileName: _jsxFileName,
@@ -3971,9 +3896,8 @@ function Users({
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     _API__WEBPACK_IMPORTED_MODULE_2__["default"].post('users/users').then(result => {
       if (result.status === 200) {
-        users = result.data.users;
-
-        if (result.data.error === 0 && result.data.users) {
+        if (result.data.error === 0 && result.data) {
+          users = result.data.users;
           setUsers(users);
         } else {
           setIsError(true);
@@ -3987,7 +3911,6 @@ function Users({
   }, [message]);
 
   function handleDelete(id) {
-    console.log(id);
     setId(id);
     _API__WEBPACK_IMPORTED_MODULE_2__["default"].post('users/delete', {
       id
@@ -3995,7 +3918,6 @@ function Users({
       if (result.status === 200) {
         if (result.data.error === 0) {
           setMessage(result.data.message);
-          console.log(result.data.message);
         } else {
           setIsError(true);
         }
@@ -4009,7 +3931,7 @@ function Users({
       to: "/users"
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 52,
       columnNumber: 16
     }, this);
   }
@@ -4031,12 +3953,12 @@ function Users({
           children: "Add New Admin"
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 65,
+          lineNumber: 62,
           columnNumber: 54
         }, this)]
       }, void 0, true, {
         fileName: _jsxFileName,
-        lineNumber: 65,
+        lineNumber: 62,
         columnNumber: 17
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Table"], {
         striped: true,
@@ -4050,35 +3972,35 @@ function Users({
               children: "#"
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 70,
+              lineNumber: 67,
               columnNumber: 25
             }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("th", {
               children: "Name"
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 71,
+              lineNumber: 68,
               columnNumber: 25
             }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("th", {
               children: "Email"
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 72,
+              lineNumber: 69,
               columnNumber: 25
             }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("th", {
               children: "Action"
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 73,
+              lineNumber: 70,
               columnNumber: 25
             }, this)]
           }, void 0, true, {
             fileName: _jsxFileName,
-            lineNumber: 69,
+            lineNumber: 66,
             columnNumber: 21
           }, this)
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 68,
+          lineNumber: 65,
           columnNumber: 21
         }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("tbody", {
           children: users && !!users.length && users.map((user, key) => /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("tr", {
@@ -4086,19 +4008,19 @@ function Users({
               children: key + 1
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 79,
+              lineNumber: 76,
               columnNumber: 29
             }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("td", {
               children: user.name
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 80,
+              lineNumber: 77,
               columnNumber: 29
             }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("td", {
               children: user.email
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 81,
+              lineNumber: 78,
               columnNumber: 29
             }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("td", {
               children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
@@ -4115,12 +4037,12 @@ function Users({
                   children: "Edit"
                 }, void 0, false, {
                   fileName: _jsxFileName,
-                  lineNumber: 82,
+                  lineNumber: 79,
                   columnNumber: 92
                 }, this)
               }, void 0, false, {
                 fileName: _jsxFileName,
-                lineNumber: 82,
+                lineNumber: 79,
                 columnNumber: 33
               }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
                 variant: "outline-danger",
@@ -4132,39 +4054,39 @@ function Users({
                 children: "Delete"
               }, void 0, false, {
                 fileName: _jsxFileName,
-                lineNumber: 83,
+                lineNumber: 80,
                 columnNumber: 106
               }, this)]
             }, void 0, true, {
               fileName: _jsxFileName,
-              lineNumber: 82,
+              lineNumber: 79,
               columnNumber: 29
             }, this)]
           }, user.id, true, {
             fileName: _jsxFileName,
-            lineNumber: 78,
+            lineNumber: 75,
             columnNumber: 25
           }, this))
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 76,
+          lineNumber: 73,
           columnNumber: 21
         }, this)]
       }, void 0, true, {
         fileName: _jsxFileName,
-        lineNumber: 67,
+        lineNumber: 64,
         columnNumber: 17
       }, this)]
     }, void 0, true, {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 61,
       columnNumber: 13
     }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("p", {
       className: "text-danger text-center text-capitalize",
       children: message
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 95,
+      lineNumber: 92,
       columnNumber: 13
     }, this)]
   }, void 0, true);

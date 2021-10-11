@@ -6,10 +6,9 @@ use App\Controllers\PostController;
 use App\Controllers\TestController;
 use App\Controllers\UserController;
 use App\Middleware\AuthMiddleware;
-use App\Middleware\CorsMiddleware;
+
 
 $app->get('/', HomeController::class . ':index');
-$app->get('/test', TestController::class . ':index');
 
 $app->post('/ping', AuthController::class . ':ping');
 $app->post('/login', AuthController::class . ':login');
@@ -28,7 +27,7 @@ $app->post('/posts/delete', PostController::class . ':destroy');
 $app->post('/posts/post', PostController::class . ':show');
 
 
-//$app->map(['GET', 'POST', 'PUT', 'DELETE', 'PATCH'], '/{routes:.+}', function($req, $res) {
-//	$handler = $this->notFoundHandler; // handle using the default Slim page not found handler
-//	return $handler($req, $res);
-//});
+$app->map(['GET', 'POST', 'PUT', 'DELETE', 'PATCH'], '/{routes:.+}', function($req, $res) {
+	$handler = $this->notFoundHandler; // handle using the default Slim page not found handler
+	return $handler($req, $res);
+});

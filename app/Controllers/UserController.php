@@ -62,7 +62,7 @@ class UserController extends BaseController
 
 			]);
 		}
-		if (!$password || !$confirmPassword || !$email || !name) {
+		if (!$password || !$confirmPassword || !$email || !$name) {
 			return $response->withJson([
 				"error" => 1,
 				"message" => "Please fill all fields!",

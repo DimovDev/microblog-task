@@ -10,7 +10,8 @@
   "entrypoints": [
     "static/js/bundle.js",
     "static/js/vendors~main.chunk.js",
+    "vendors~main.a8ccc165fdd789cbd891.hot-update.js",
     "static/js/main.chunk.js",
-    "main.0eb19adf2c74714c3636.hot-update.js"
+    "main.a8ccc165fdd789cbd891.hot-update.js"
   ]
 }

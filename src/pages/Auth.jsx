@@ -7,33 +7,8 @@ import { useAuth } from '../context/Auth';
 function Auth(props) {
 	const { authData, setAuth } = useAuth();
 	useEffect(() => {
-		const cancelToken = axios.CancelToken.source();
 
-
-		// axios
-		// 	.post('http://localhost:8080/ping',  { cancelToken: cancelToken.token })
-		// 	.then(result => {
-		// 		console.log(result)
-		// 		if (result.status === 200) {
-		// 			if (result.data.error === 0) {
-		// 				setAuth(result.data.authData);
-		// 			} else {
-		// 				setAuth(null);
-		// 			}
-		// 		} else {
-		// 			setAuth(null);
-		// 		}
-		// 	})
-		// 	.catch(e => {
-		// 		if (!axios.isCancel(e)) {
-		// 			setAuth(null);
-		// 		}
-		// 	});
-		// return () => {
-		// 	cancelToken.cancel();
-		// };
 		try {
-
 		setAuth(localStorage.getItem('user'));
 		}catch (e) {
 			setAuth(null);

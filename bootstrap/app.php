@@ -6,11 +6,15 @@ use App\Controllers\TestController;
 use App\Middleware\AuthMiddleware;
 use App\Middleware\CorsMiddleware;
 use Slim\Csrf\Guard;
+use Slim\Views\Twig;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
 try {
-	(new Dotenv\Dotenv(__DIR__ . '/../'))->load();
+
+	$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+	$dotenv->load();
+
 } catch (Dotenv\Exception\InvalidPathException $e) {
 	//
 }
@@ -22,6 +26,7 @@ $app = new Slim\App([
 		'app' => [
 			'name' => getenv('APP_NAME')
 		],
+
 
 		'views' => [
 			'cache' => getenv('VIEW_CACHE_DISABLED') === 'true' ? false : __DIR__ . '/../storage/views'
@@ -41,11 +46,11 @@ $app = new Slim\App([
 	],
 ]);
 
-//$app->options('/{routes:.+}', function ($request, $response, $args) {
-//	return $response;
-//});
-//$app->add(new CorsMiddleware());
-//$app->add(new AuthMiddleware());
+$app->options('/{routes:.+}', function ($request, $response, $args) {
+	return $response;
+});
+$app->add(new CorsMiddleware());
+
 
 $app->add(
 	new \Slim\Middleware\Session([
@@ -58,7 +63,7 @@ $app->add(
 $container = $app->getContainer();
 
 $container['view'] = function ($container) {
-	$view = new \Slim\Views\Twig(__DIR__ . '/../resources/views', [
+	$view = new Twig(__DIR__ . '/../resources/views', [
 		'cache' => $container->settings['views']['cache']
 	]);
 
@@ -84,5 +89,6 @@ $container['session'] = function ($c) {
 };
 require_once __DIR__ . '/database.php';
 require_once __DIR__ . '/../routes/web.php';
+
 
 

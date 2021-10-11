@@ -19,9 +19,9 @@ class HomeController extends BaseController
      */
     public function index(Request $request, Response $response, $args)
     {
-//dump($response); die();
+
         return $this->c['view']->render($response, 'home/index.twig', [
             'appName' => $this->c['settings']['app']['name'],
-        ]);
+        ],200);
     }
 }

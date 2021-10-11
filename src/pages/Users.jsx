@@ -15,8 +15,8 @@ function Users({props}) {
         API.post('users/users')
             .then(result => {
                 if (result.status === 200) {
+                    if (result.data.error === 0 && result.data) {
                     users = (result.data.users)
-                    if (result.data.error === 0 && result.data.users) {
                         setUsers(users);
                     } else {
                         setIsError(true);
@@ -32,17 +32,14 @@ function Users({props}) {
 
 
     function handleDelete(id) {
-        console.log(id)
+
         setId(id)
         API.post('users/delete', {id})
             .then(result => {
                 if (result.status === 200) {
-
                     if (result.data.error === 0) {
                         setMessage(result.data.message);
-                        console.log(result.data.message)
-
-                    } else {
+                                      } else {
                         setIsError(true);
                     }
                 } else {

@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 
-use Illuminate\Database\Eloquent\Builder;
+
 use Psr\Container\ContainerInterface;
 
 class BaseController extends Controller

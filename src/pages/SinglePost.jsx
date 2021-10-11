@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Media from 'react-bootstrap/Media'
 import {Container} from 'react-bootstrap'
 import API from "../API";
-import {Link} from "react-router-dom";
+
 
 function SinglePost(props) {
 
