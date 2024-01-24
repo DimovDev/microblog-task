@@ -1,0 +1,5 @@
+.idea
+/vendor
+.env
+Notes.txt
+/node_modules
